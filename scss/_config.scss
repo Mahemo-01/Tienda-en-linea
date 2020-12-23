@@ -1,16 +1,17 @@
 :root{
   // colors //
-  --primary-color:    #eb5353;
+  --primary-color:    #3fdfeb;
   --grey-color:       #333333;
   --lightgrey-color:  #f7f7f7e6;
 
   // medidas //
-  --navbar-medida: 3.7rem;
+  --navbar-medida: 4rem;
   --section-medida: 100vh;
 
   // box-shadow //
   --default-shadow: 0 3px 6px rgba(0,0,0,0.2);
   --btn-shadow:     0 3px 4px rgba(0,0,0,0.6);
+  --box-shadow:     0 2px 8px rgba(0,0,0,0.8);
   --card-shadow:    0 4px 9px 4px rgba(211, 211, 211, 0.8);
 }
 
