@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Quicksand|Raleway|Roboto|Montserrat&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p{
+  font-size: .9rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover, a:active, a:visited{
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+
+ul, ol{
+  list-style: none;
+}
+
+input:focus{
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.card{
+  background-color: var(--card-color);
+  box-shadow: var(--default-shadow);
+  padding: 10px;
+
+  .form-group{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.section{
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex{
+  display: flex;
+  flex-direction: row;
+}
+
+// Efects //
+.blur{
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.bor{
+  border: none;
+}
+
+// Margin & padding classes //
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $spacers {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+    .#{$abbrev}t-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+    .#{$abbrev}r-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+    .#{$abbrev}b-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+    .#{$abbrev}l-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+  }
+}
+
+@each $size, $length in $spacers {
+  @if $size != 0 {
+    .m-n#{$size} { margin: -$length !important; }
+    .mt-n#{$size},
+    .my-n#{$size} {
+      margin-top: -$length !important;
+    }
+    .mr-n#{$size},
+    .mx-n#{$size} {
+      margin-right: -$length !important;
+    }
+    .mb-n#{$size},
+    .my-n#{$size} {
+      margin-bottom: -$length !important;
+    }
+    .ml-n#{$size},
+    .mx-n#{$size} {
+      margin-left: -$length !important;
+    }
+  }
+}
