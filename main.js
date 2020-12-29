@@ -29,10 +29,12 @@ mainSection.addEventListener('click', typeClicked)
 // Breadcrumb //
 // breadcrumb.add('inicio')
 
+let obj1 = [1, 2, 3, 4, 5]
+let obj2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 function bodyLoaded() {
   ui.search()
-  cs.carousel(homeSection, 'hola', 'espera')
-  cs.carousel(homeSection, 'hola', 've')
+  cs.carousel(homeSection, obj1, 'espera')
+  // cs.carousel(homeSection, obj2, 've')
   ui.typeCards(typeSection, types)
 }
 

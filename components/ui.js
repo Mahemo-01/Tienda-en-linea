@@ -53,14 +53,13 @@ class UI {
     }
   }
 
-  changeRoot(customVar, value) {
-    let root = document.querySelector(':root')
-    root.style.setProperty(customVar, value)
+  changeRoot(customVar, value, div = document.querySelector(':root')) {
+    div.style.setProperty(customVar, value)
   }
 
-  addStyle(section, clase) {
-    section.classList.add(clase)
-  }
+  // changeStyle(customVar, value, div = document.querySelector(':root')) {
+  //   div.style.setProperty(customVar, value)
+  // }
 }
 
 export default UI

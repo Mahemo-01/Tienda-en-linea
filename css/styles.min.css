@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans|Quicksand|Raleway|Roboto|Montserrat&display=swap");
 :root {
+  --white-color:      #ffffff;
+  --lightgrey-color:  #f7f7f7e6;
   --primary-color:    #3fdfeb;
   --grey-color:       #333333;
-  --lightgrey-color:  #f7f7f7e6;
   --navbar-medida: 4rem;
   --section-medida: 100vh;
   --default-shadow: 0 3px 6px rgba(0,0,0,0.2);
@@ -495,6 +496,39 @@ footer {
   margin-left: -3rem !important;
 }
 
+.btn-white, .btn-blue, .btn-carousel {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+}
+
+.btn-white:hover, .btn-blue:hover, .btn-carousel:hover {
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+}
+
+.btn-white:active, .btn-blue:active, .btn-carousel:active {
+  box-shadow: var(--btn-shadow) inset;
+}
+
+.btn-white {
+  background-color: var(--card-color);
+}
+
+.btn-blue {
+  background-color: var(--blue-color);
+  filter: brightness(110%);
+}
+
+.btn-carousel {
+  background-color: transparent;
+  color: var(--white-color);
+}
+
+.btn-carousel:hover {
+  box-shadow: none;
+}
+
 .nav-bar {
   height: var(--navbar-medida);
   width: 100%;
@@ -597,22 +631,24 @@ footer {
   box-sizing: unset;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 #main-section #home-section .carousel {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  box-sizing: unset;
+  align-self: start;
 }
 
 #main-section #home-section .carousel .carousel-slide-es {
-  --var-medida: 350px;
   width: calc(var(--var-medida) * 3);
   height: var(--var-medida);
   border-radius: calc(var(--var-medida) / 15);
   background-color: var(--primary-color);
   box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #main-section #home-section .carousel .carousel-slide-ve {
@@ -626,6 +662,24 @@ footer {
 
 #main-section #home-section .carousel:nth-child(2) {
   margin-top: 2rem;
+}
+
+#main-section #home-section .carousel-btns {
+  --btn-medida:50px;
+  width: calc(var(--var-medida) * 3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  left: calc(8rem);
+}
+
+#main-section #home-section .carousel-btns .btn-carousel {
+  height: var(--btn-medida);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
 }
 
 #main-section #type-section {

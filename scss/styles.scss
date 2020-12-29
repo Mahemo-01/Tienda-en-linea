@@ -1,5 +1,6 @@
 @import 'config';
 @import 'utilities';
+@import 'buttons';
 
 
 .nav-bar{
@@ -104,20 +105,23 @@
     box-sizing: unset;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     .carousel{
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      box-sizing: unset;
+      align-self: start;
 
       .carousel-slide-es{
-        --var-medida: 350px;
         width: calc(var(--var-medida) * 3);
         height: var(--var-medida);
         border-radius: calc(var(--var-medida) / 15);
         background-color: var(--primary-color);
         box-shadow: var(--box-shadow);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .carousel-slide-ve{
@@ -131,6 +135,23 @@
     }
     .carousel:nth-child(2){
       margin-top: 2rem;
+    }
+    .carousel-btns{
+      --btn-medida:50px;
+      width: calc(var(--var-medida) * 3);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: absolute;
+      left: calc(8rem);
+
+      .btn-carousel{
+        height: var(--btn-medida);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: crimson;
+      }
     }
   }
 
