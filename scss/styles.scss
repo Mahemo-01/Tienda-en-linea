@@ -105,12 +105,15 @@
     box-sizing: unset;
     display: flex;
     flex-direction: column;
-    position: relative;
 
     .carousel{
       display: flex;
       flex-direction: row;
       align-self: start;
+      position: relative;
+
+    .carousel-slides{
+      display: flex;
 
       .carousel-slide-es{
         width: calc(var(--var-medida) * 3);
@@ -125,16 +128,16 @@
       }
 
       .carousel-slide-ve{
-        --var-medida: 200px;
         height: calc(var(--var-medida) * 1.5);
         width: var(--var-medida);
         border-radius: calc(var(--var-medida) / 15);
         background-color: var(--primary-color);
         box-shadow: var(--box-shadow);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-    }
-    .carousel:nth-child(2){
-      margin-top: 2rem;
     }
     .carousel-btns{
       --btn-medida:50px;
@@ -143,7 +146,8 @@
       flex-direction: row;
       justify-content: space-between;
       position: absolute;
-      left: calc(8rem);
+      left: calc(7rem);
+      top: calc(50% - var(--btn-medida) / 2);
 
       .btn-carousel{
         height: var(--btn-medida);
@@ -154,6 +158,10 @@
       }
     }
   }
+  .carousel:nth-child(2){
+    margin-top: 2rem;
+  }
+}
 
   #type-section{
     --var-medida: 500px;

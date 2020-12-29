@@ -33,8 +33,8 @@ let obj1 = [1, 2, 3, 4, 5]
 let obj2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 function bodyLoaded() {
   ui.search()
-  cs.carousel(homeSection, obj1, 'espera')
-  // cs.carousel(homeSection, obj2, 've')
+  cs.carousel(homeSection, obj1, 'espera', 350)
+  cs.carousel(homeSection, obj2, 've', 200)
   ui.typeCards(typeSection, types)
 }
 

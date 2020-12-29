@@ -631,16 +631,20 @@ footer {
   box-sizing: unset;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 #main-section #home-section .carousel {
   display: flex;
   flex-direction: row;
   align-self: start;
+  position: relative;
 }
 
-#main-section #home-section .carousel .carousel-slide-es {
+#main-section #home-section .carousel .carousel-slides {
+  display: flex;
+}
+
+#main-section #home-section .carousel .carousel-slides .carousel-slide-es {
   width: calc(var(--var-medida) * 3);
   height: var(--var-medida);
   border-radius: calc(var(--var-medida) / 15);
@@ -651,35 +655,39 @@ footer {
   align-items: center;
 }
 
-#main-section #home-section .carousel .carousel-slide-ve {
+#main-section #home-section .carousel .carousel-slides .carousel-slide-ve {
   --var-medida: 200px;
   height: calc(var(--var-medida) * 1.5);
   width: var(--var-medida);
   border-radius: calc(var(--var-medida) / 15);
   background-color: var(--primary-color);
   box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#main-section #home-section .carousel:nth-child(2) {
-  margin-top: 2rem;
-}
-
-#main-section #home-section .carousel-btns {
+#main-section #home-section .carousel .carousel-btns {
   --btn-medida:50px;
   width: calc(var(--var-medida) * 3);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: absolute;
-  left: calc(8rem);
+  left: calc(7rem);
+  top: calc(50% - var(--btn-medida) / 2);
 }
 
-#main-section #home-section .carousel-btns .btn-carousel {
+#main-section #home-section .carousel .carousel-btns .btn-carousel {
   height: var(--btn-medida);
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: crimson;
+}
+
+#main-section #home-section .carousel:nth-child(2) {
+  margin-top: 2rem;
 }
 
 #main-section #type-section {
