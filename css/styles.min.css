@@ -656,7 +656,6 @@ footer {
 }
 
 #main-section #home-section .carousel .carousel-slides .carousel-slide-ve {
-  --var-medida: 200px;
   height: calc(var(--var-medida) * 1.5);
   width: var(--var-medida);
   border-radius: calc(var(--var-medida) / 15);

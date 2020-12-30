@@ -1,6 +1,3 @@
-import UI from './ui.js'
-const ui = new UI()
-
 class Carousel {
   constructor() {
     this.rem = 16
@@ -21,7 +18,7 @@ class Carousel {
     let slides = document.createElement('div')
     slides.className = 'carousel-slides'
 
-    ui.changeRoot('--var-medida', `${medida}px`, carousel)
+    this.changeRoot('--var-medida', `${medida}px`, carousel)
 
     if (type == 'espera') {
       for (let i = 0; i < products.length; i++) {
@@ -30,6 +27,9 @@ class Carousel {
         div.innerHTML = `${products[i]}`
         slides.appendChild(div)
       }
+
+      slides.firstElementChild.nextSibling.id = 'lastClone'
+      slides.lastElementChild.previousSibling.id = 'firstClone'
 
       slides.style.transform = `translateX(-${((medida * 3) * 2) - (this.rem * 2)}px)`
       carousel.appendChild(slides)
@@ -69,25 +69,44 @@ class Carousel {
     }
 
     else {
+      products.push(products[4])
+      products.push(products[5])
+      products.push(products[6])
       for (let i = 0; i < products.length; i++) {
         let div = document.createElement('div')
         div.className = 'carousel-slide-ve mx-3'
         div.innerHTML = `${products[i]} `
         slides.appendChild(div)
       }
+
+      let num = slides.children.length - 6
+      slides.children[num].id = 'firstClone'
+
       slides.style.transform = `translateX(-${(medida * 2) - (this.rem * 2)}px)`
       carousel.appendChild(slides)
+      counter = 1
+
+      loop()
+      function loop() {
+        counter++
+        console.log(counter)
+        console.log(slides.children[counter])
+        slides.style.transition = 'transform  2s ease-in-out'
+        slides.style.transform = `translateX(-${368 + (232 * (counter - 2))}px`
+        let t = setTimeout(() => { loop() }, 4000)
+      }
+
+      slides.addEventListener('transitionend', () => {
+        if (slides.children[counter].id === 'firstClone') {
+          slides.style.transition = 'none'
+          counter = 1
+          slides.style.transform = `translateX(-${368 + (232 * (counter - 2))}px`
+        }
+      })
 
       section.appendChild(carousel)
     }
-
-    slides.firstElementChild.nextSibling.id = 'lastClone'
-    slides.lastElementChild.previousSibling.id = 'firstClone'
   }
-
-
-
-
 
   slideBtn(section) {
     let btns = ['prev', 'next']
@@ -102,6 +121,10 @@ class Carousel {
       parent.appendChild(div)
     }
     section.appendChild(parent)
+  }
+
+  changeRoot(customVar, value, div = document.querySelector(':root')) {
+    div.style.setProperty(customVar, value)
   }
 }
 

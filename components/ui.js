@@ -56,10 +56,6 @@ class UI {
   changeRoot(customVar, value, div = document.querySelector(':root')) {
     div.style.setProperty(customVar, value)
   }
-
-  // changeStyle(customVar, value, div = document.querySelector(':root')) {
-  //   div.style.setProperty(customVar, value)
-  // }
 }
 
 export default UI
